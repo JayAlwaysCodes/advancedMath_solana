@@ -1,6 +1,6 @@
 #! /bin/bash
 
-SOLANA_PROGRAMS=("sum" "square")
+SOLANA_PROGRAMS=("calculator")
 
 case $1 in
     "reset")
@@ -23,7 +23,7 @@ case $1 in
         done;;
     "build")
         for program in "${SOLANA_PROGRAMS[@]}"; do
-            cargo build-bpf --manifest-path=../src/$program/Cargo.toml --bpf-out-dir=./dist/program
+            cargo build-bpf --manifest-path=../src/$program/Cargo.toml --bpf-out-dir=../dist/program
         done;;
     "deploy")
         for program in "${SOLANA_PROGRAMS[@]}"; do
